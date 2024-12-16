@@ -1,3 +1,4 @@
+import { minify } from "../minify";
 import { type ImageMetaData, imageMetaData as setMetaData } from "./image-metadata";
 
 interface MetaTag {
@@ -39,7 +40,6 @@ export const setSEO = ({
 }): string => {
     const metaTagString = generateMetaTags(metaTags);
     const openGraphTagString = generateOpenGraphTags(openGraphTags);
-    
     const head =  `
         <title>${title}</title>
         <meta name="description" content="${description}">
@@ -49,5 +49,5 @@ export const setSEO = ({
         ${imageMetaData && setMetaData(imageMetaData)}
     `;
 
-    return document.head.innerHTML += head
+    return document.head.innerHTML += minify(head);
 };

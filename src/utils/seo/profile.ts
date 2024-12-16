@@ -1,10 +1,12 @@
+import { minify } from "../minify"
+
 const domain = window.location.origin ?? ""
 const identifier = import.meta.env.VITE_APP_ID ?? ""
 const name = import.meta.env.VITE_APP_NAME ?? ""
 const description = import.meta.env.VITE_APP_DESCRIPTION ?? ""
 const profilePath = import.meta.env.VITE_APP_PROFILE_PATH ?? ""
 
-export const ProfilePage = (
+export const ProfilePage = () => minify(
     `<script type="application/ld+json">{
         "@context": "https://schema.org",
         "@type": "ProfilePage",

@@ -1,3 +1,5 @@
+import { minify } from "../minify";
+
 const domain = window.location.origin ?? ""
 
 export type ImageMetaData = {
@@ -21,7 +23,7 @@ export const imageMetaData = ({
     acquireLicensePage,
     imagePath
 }: ImageMetaData) => {
-    return (
+    return minify(
         `<script type="application/ld+json">
             {
                 "@context": "https://schema.org/",
