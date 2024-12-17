@@ -1,0 +1,9 @@
+<header>
+    <nav class="mx-auto w-full max-w-3xl bg-transparent px-5 py-2 border border-background rounded-b-full sticky top-0 backdrop-blur-xl">
+        <ul class="inline-flex gap-2 justify-evenly w-full">
+            ${menu.map(item=> {
+                return `<li class="font-normal rounded-full p-2 px-4 text-foreground/80 hover:text-foreground"><a href="${item.url}">${item.title}</a></li>`
+            }).join("")}
+        </ul>
+    </nav>
+</header>
