@@ -1,3 +1,4 @@
+import { googleFonts } from "../fonts";
 import { minify } from "../minify";
 import { type ImageMetaData, imageMetaData as setMetaData } from "./image-metadata";
 
@@ -40,13 +41,14 @@ export const setSEO = ({
 }): string => {
     const metaTagString = generateMetaTags(metaTags);
     const openGraphTagString = generateOpenGraphTags(openGraphTags);
-    const head =  `
+    const head = `
         <title>${title}</title>
         <meta name="description" content="${description}">
+        ${googleFonts}
         ${metaTagString ?? ""}
         ${openGraphTagString ?? ""}
         ${profilePage ?? ""}
-        ${imageMetaData && setMetaData(imageMetaData)}
+        ${imageMetaData ? setMetaData(imageMetaData) : ""}
     `;
 
     return document.head.innerHTML += minify(head);
