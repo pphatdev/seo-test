@@ -1,4 +1,6 @@
+import { handleThemeToggle } from "@/components/theme";
 import NotFound from "../pages/not-found/page";
+import { renderUpDown } from "@/components/updown";
 
 export class Router {
     private routes: Array<{ path: string; component: string | ((...params: any[]) => string) }>;
@@ -21,13 +23,15 @@ export class Router {
             return r.path === route || /\/:/g.test(r.path)
         });
         if (matchedRoute) {
-            const component = typeof matchedRoute.component === 'function' 
-                ? matchedRoute.component() 
+            const component = typeof matchedRoute.component === 'function'
+                ? matchedRoute.component()
                 : matchedRoute.component;
             document.getElementById('app')!.innerHTML = component;
         } else {
             document.getElementById('app')!.innerHTML = NotFound();
         }
+        handleThemeToggle()
+        renderUpDown()
     }
 
     public navigate(path: string) {
