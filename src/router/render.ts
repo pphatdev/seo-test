@@ -30,7 +30,12 @@ export class Router {
         } else {
             document.getElementById('app')!.innerHTML = NotFound();
         }
-        document.head.innerHTML += `<link rel="canonical" href="${window.location.href}"/>`
+        document.head.innerHTML += (`
+            <link rel="canonical" href="${window.location.href}"/>
+            <link rel="manifest" href="/site.webmanifest"/>
+            <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon"/>
+            <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+        `)
         handleThemeToggle()
         renderUpDown()
     }
