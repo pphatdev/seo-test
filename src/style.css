@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-
     :root {
         --background: 0 0% 100%;
         --foreground: 222.2 84% 4.9%;
+
+        --primary: 162 98% 40%;
+        --primary-foreground: 222.2 84% 4.9%;
     }
 
     .dark {
@@ -16,6 +17,6 @@
     }
 
     * {
-        @apply font-default;
+        @apply font-default text-foreground/80;
     }
 }

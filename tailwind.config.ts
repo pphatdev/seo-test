@@ -2,14 +2,17 @@
 export default {
     content: [
         "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx,html,vue,svelte}",
-        "./src/**/**/*.{js,ts,jsx,tsx,html,vue,svelte}",
+        "./src/**/*.{js,ts,jsx,tsx,html,vue,svelte,stub}",
+        "./src/**/**/*.{js,ts,jsx,tsx,html,vue,svelte,stub}",
     ],
+    darkMode: "class",
     theme: {
         extend: {
             colors: {
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",
+                primary: "hsl(var(--primary))",
+                'primary-foreground': "hsl(var(--primary-foreground))",
             },
             fontFamily: {
                 default: "Kantumruy Pro, Poppins, sans-serif"
