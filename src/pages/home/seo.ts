@@ -10,8 +10,8 @@ const homeSEO = () => setSEO({
             content: `Author: ${import.meta.env.VITE_APP_NAME}`
         },
         {
-            name: "robots",
-            content: "noindex, nofollow"
+            name: "Googlebot",
+            content: "noindex"
         }
     ],
     profilePage: ProfilePage()
