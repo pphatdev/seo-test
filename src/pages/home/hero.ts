@@ -67,7 +67,7 @@ const buttons = (() => {
 const profile = (() => {
     return (
         `<div class="shrink-0 relative -mt-10">
-            <img src="/assets/avatars/hero.webp" alt="Leat Sophat" class="w-96 h-auto drop-shadow-lg">
+            <img src="/assets/avatars/hero.webp" alt="Leat Sophat" width="200" height="200" loading="lazy" class="w-96 h-auto drop-shadow-lg">
             <div class="absolute bottom-0 z-50 items-end h-full bg-red-500 overflow-hidden rounded-full  translate-y-7 sm:translate-y-8 group-hover:flex">
                 <div class="flex -mb-px h-[1px] w-full">
                     <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
