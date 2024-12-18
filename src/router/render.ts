@@ -30,6 +30,7 @@ export class Router {
         } else {
             document.getElementById('app')!.innerHTML = NotFound();
         }
+        document.head.innerHTML += `<link rel="canonical" href="${window.location.href}"/>`
         handleThemeToggle()
         renderUpDown()
     }
