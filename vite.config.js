@@ -1,6 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -16,5 +17,15 @@ export default {
             "@templates": path.resolve(__dirname, "./src/templates"),
         },
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    }
+    },
+    rollupOptions: {
+        external: [
+            "sharp"
+        ]
+    },
+    plugins: [
+        ViteImageOptimizer({
+          /* pass your config */
+        }),
+    ],
 }

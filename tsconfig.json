@@ -28,7 +28,8 @@
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"],
       "@templates/*": ["./src/templates/*"]
-    }
+    },
+    "esModuleInterop": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

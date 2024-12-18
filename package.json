@@ -24,15 +24,20 @@
   },
   "homepage": "https://github.com/pphatdev/seo-example#readme",
   "devDependencies": {
+    "@types/node": "^22.10.2",
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "postcss": "^8.4.49",
+    "svgo": "^3.3.2",
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.16",
     "typescript": "~5.6.2",
-    "vite": "^6.0.1"
+    "vite": "^6.0.1",
+    "vite-plugin-image-optimizer": "^1.1.8"
   },
   "dependencies": {
-    "gsap": "^3.12.5"
+    "fs": "^0.0.1-security",
+    "gsap": "^3.12.5",
+    "sharp": "^0.33.5"
   }
 }
