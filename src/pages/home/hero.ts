@@ -6,6 +6,14 @@ const download = (() => {
     )
 })()
 
+const projects = (() => {
+    return (
+        `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+        </svg>`
+    )
+})()
+
 const effectButton = (() => {
     return (
         `<div class="absolute inset-0 items-end h-5 overflow-hidden rounded-full translate-y-7 sm:translate-y-8 group-hover:flex">
@@ -28,18 +36,10 @@ const buttonList = [
     },
     {
         id: 2,
-        name: 'Download CV',
+        name: 'Projects',
         target: "_blank",
-        href: "https://drive.google.com/file/d/10rCDGaZmPShEig1ffibrQaec6N8tsRfS/view?usp=sharing",
-        icon: download,
-        hasEffects: true
-    },
-    {
-        id: 2,
-        name: 'Download CV',
-        target: "_blank",
-        href: "https://drive.google.com/file/d/10rCDGaZmPShEig1ffibrQaec6N8tsRfS/view?usp=sharing",
-        icon: download,
+        href: "https://leatsophat.me/projects",
+        icon: projects,
         hasEffects: true
     },
 ]
@@ -54,7 +54,7 @@ const buttons = (() => {
                         href="${item?.href}"
                         class="px-4 gap-2 active:bg-primary/10 inline-flex items-center py-1.5 text-xs sm:text-sm border border-foreground/10 rounded-lg min-w-fit drop-shadow-md backdrop-blur-xl"
                     >
-                        <span>${item?.name}</span>
+                        <span class="truncate">${item?.name}</span>
                         ${item?.icon}
                         ${item.hasEffects ? effectButton : ""}
                     </a>
@@ -94,7 +94,7 @@ export const heroSection = (() => {
                 </div>
                 <p class="text-foreground sm:text-lg">${description}</p>
                 <nav>
-                    <ul class="inline-flex gap-2">
+                    <ul class="inline-flex w-full justify-center md:justify-start flex-wrap gap-2">
                         ${buttons}
                     </ul>
                 </nav>
