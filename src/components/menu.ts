@@ -7,7 +7,7 @@ export const menu = [
         isActive: currentPath === "/"
     },
     {
-        title: "Our Project",
+        title: "Projects",
         url: "/projects",
         isActive: currentPath === "/projects"
     },
