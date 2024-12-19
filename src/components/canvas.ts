@@ -242,7 +242,7 @@ export const renderCanvas = (): void => {
 
 
 export const renderAsElement = (() => {
-    const canvas = (`<canvas id="canvas" class="fixed top-0 left-0 -z-10 w-full"></canvas>`);
+    const canvas = (`<canvas id="canvas" class="fixed hidden sm:block top-0 left-0 -z-10 w-full"></canvas>`);
     addEventListener('DOMContentLoaded', () => renderCanvas());
     return canvas
 })()
