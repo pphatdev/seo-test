@@ -1,3 +1,5 @@
+import { profileMode } from "@/components/profile-mode"
+
 const download = (() => {
     return (
         ` <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -65,9 +67,13 @@ const buttons = (() => {
 })()
 
 const profile = (() => {
+
+    // old profile
+    // <img src="/assets/avatars/hero.webp" alt="Leat Sophat" width="150" height="150" loading="lazy" class="w-96 h-auto drop-shadow-lg">
+    const profile = profileMode()
     return (
         `<div class="shrink-0 relative -mt-10">
-            <img src="/assets/avatars/hero.webp" alt="Leat Sophat" width="150" height="150" loading="lazy" class="w-96 h-auto drop-shadow-lg">
+            ${profile}
             <div class="absolute bottom-0 z-50 items-end h-full bg-red-500 overflow-hidden rounded-full  translate-y-7 sm:translate-y-8 group-hover:flex">
                 <div class="flex -mb-px h-[1px] w-full">
                     <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
@@ -80,7 +86,7 @@ const profile = (() => {
 
 
 export const heroSection = (() => {
-    const title = import.meta.env.VITE_APP_NAME
+    const title = import.meta.env.VITE_APP_NAME ?? ""
     const description = import.meta.env.VITE_APP_DESCRIPTION
     const lastName = title.split(" ")[0]
     const firstName = title.split(" ")[1]
