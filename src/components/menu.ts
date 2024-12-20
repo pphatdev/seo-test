@@ -8,12 +8,12 @@ export const menu = [
     },
     {
         title: "Projects",
-        url: "/projects",
+        url: "https://leatsophat.me/projects",
         isActive: currentPath === "/projects"
     },
     {
         title: "About us",
-        url: "/about",
+        url: "https://leatsophat.me/about/",
         isActive: currentPath === "/about"
     },
 ]
