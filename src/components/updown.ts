@@ -4,7 +4,7 @@ import TweenLite, { Linear } from 'gsap';
 
 export const spaceElevatorSVG = (className?: string) => {
     return (`
-        <svg class="${cn(className, "w-full h-full")}" id="lines" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 1920 1080" xml:space="preserve" preserveAspectRatio="none">
+        <svg class="${cn("w-full h-full", className)}" id="lines" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 1920 1080" xml:space="preserve" preserveAspectRatio="none">
             <g class="opacity-10">
                 <rect class="fill-primary/10" x="1253.6" width="4.5" height="1080"></rect>
                 <rect class="fill-primary/10" x="873.3" width="1.8" height="1080"></rect>
