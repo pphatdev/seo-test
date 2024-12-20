@@ -24,8 +24,8 @@ npm run build
 
 Light Mode:
 
-![Light Mode](./public/assets/screenshots/Screenshot%202024-12-18%20195221.png)
+![Light Mode](./public/assets/screenshots/light-test-Screenshot-2024-12-18.png)
 
 Dark Mode:
 
-![Dark Mode](./public/assets/screenshots/Screenshot%202024-12-18%20195410.png)
+![Dark Mode](./public/assets/screenshots/dark-test-Screenshot-2024-12-18.png)
