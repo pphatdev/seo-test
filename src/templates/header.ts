@@ -6,7 +6,7 @@ export const headerSection = (()=> {
     return(
         `<header class="flex justify-between items-center w-full px-2 md:px-5 inset-x-0 sticky pt-4 z-50 max-w-6xl mx-auto">
             <div class="px-2 flex py-2 rounded-full bg-foreground/5 backdrop-blur-xl text-foreground">
-                ${logo("w-8 h-8")}
+                ${logo()}
             </div>
             <nav class="mx-auto hidden sm:flex w-full max-w-md px-5 py-2 rounded-full bg-foreground/5 backdrop-blur-xl">
                 <ul class="inline-flex gap-2 justify-center w-full">
