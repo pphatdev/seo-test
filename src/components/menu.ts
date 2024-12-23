@@ -7,6 +7,11 @@ export const menu = [
         isActive: currentPath === "/"
     },
     {
+        title: "Blog",
+        url: "/blog",
+        isActive: currentPath === "/blog"
+    },
+    {
         title: "Projects",
         url: "https://leatsophat.me/projects",
         isActive: currentPath === "/projects"

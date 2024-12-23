@@ -1,5 +1,5 @@
 import { handleThemeToggle } from "@/components/theme";
-import NotFound from "../pages/not-found/page";
+import NotFound from "@/pages/not-found/page";
 import { renderUpDown } from "@/components/updown";
 
 export class Router {
