@@ -1,4 +1,4 @@
-// import { profileMode } from "@/components/profile-mode"
+import { profileMode } from "@/components/profile-mode"
 
 const download = (
     `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -62,9 +62,7 @@ const profile = (() => {
 
     // old profile
     // <img src="/assets/avatars/hero.webp" alt="Leat Sophat" width="150" height="150" loading="lazy" class="w-96 h-auto drop-shadow-lg">
-    // const profile = profileMode()
-
-    const profile = ""
+    const profile = profileMode()
 
     return (
         `<div class="shrink-0 relative -mt-10">
