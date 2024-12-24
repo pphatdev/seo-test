@@ -1,11 +1,14 @@
+import { Event, GlobalEvents } from "@/assets/icons/logo-events";
 import { handleThemeToggle } from "@/components/theme";
-import NotFound from "@/pages/not-found/page";
 import { renderUpDown } from "@/components/updown";
+import { Routes } from "@/types/router";
+import NotFound from "@/pages/not-found/page";
+import { Snow } from "@/components/snow";
 
 export class Router {
-    private routes: Array<{ path: string; component: string | ((...params: any[]) => string) }>;
+    private routes: Routes;
 
-    constructor(routes: Array<{ path: string; component: string | ((...params: any[]) => string) }>) {
+    constructor(routes: Routes) {
         this.routes = routes;
         this.init();
     }
@@ -37,7 +40,16 @@ export class Router {
             <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
         `)
         handleThemeToggle()
-        renderUpDown()
+
+        const defaultEvent: Event = {
+            name: "default",
+            condition: () => false,
+            svgContent: () => ""
+        };
+
+        const activeEvent = (GlobalEvents).find(event => event.condition()) || defaultEvent;
+        activeEvent.name === "Christmas" ? Snow() : null;
+        !activeEvent ? renderUpDown() : null;
     }
 
     public navigate(path: string) {
