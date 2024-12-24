@@ -1,5 +1,5 @@
 import { Bg as Background } from "@components/bg";
-import { renderAsElement as oscillator } from "@components/canvas";
+import { renderAsElement as oscillator } from "@/components/oscillator";
 import { headerSection } from "@templates/header";
 import homeSEO from "@pages/home/seo";
 import { heroSection } from "@pages/home/hero";
