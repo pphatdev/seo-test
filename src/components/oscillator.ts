@@ -1,9 +1,4 @@
-interface OscillatorOptions {
-    phase?: number;
-    offset?: number;
-    frequency?: number;
-    amplitude?: number;
-}
+import { Config, ExtendedCanvasRenderingContext2D, LineOptions, Node, OscillatorOptions, Position } from "@/types/oscillator";
 
 class Oscillator {
     private phase: number;
@@ -28,38 +23,6 @@ class Oscillator {
     getValue(): number {
         return this.value;
     }
-}
-
-interface NodePoint {
-    x: number;
-    y: number;
-    vx: number;
-    vy: number;
-}
-
-class Node implements NodePoint {
-    x: number = 0;
-    y: number = 0;
-    vx: number = 0;
-    vy: number = 0;
-}
-
-interface LineOptions {
-    spring: number;
-}
-
-interface Position {
-    x: number;
-    y: number;
-}
-
-interface Config {
-    debug: boolean;
-    friction: number;
-    trails: number;
-    size: number;
-    dampening: number;
-    tension: number;
 }
 
 class Line {
@@ -127,10 +90,6 @@ class Line {
     }
 }
 
-interface ExtendedCanvasRenderingContext2D extends CanvasRenderingContext2D {
-    running: boolean;
-    frame: number;
-}
 
 let ctx: ExtendedCanvasRenderingContext2D;
 let oscillator: Oscillator;
