@@ -18,10 +18,17 @@ export default {
         },
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
-    rollupOptions: {
-        external: [
-            "sharp"
-        ]
+    build: {
+        rollupOptions: {
+            external: ["sharp"],
+            output: {
+                manualChunks: {
+                    // vendor: ['react', 'react-dom'],
+                    // Add more chunk definitions as needed
+                }
+            }
+        },
+        chunkSizeWarningLimit: 1000, // Size in kB
     },
     plugins: [
         ViteImageOptimizer({
