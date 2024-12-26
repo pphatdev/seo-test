@@ -5,6 +5,9 @@
 
 This project is my testing web SEO.
 
+# Disclaimer
+This project is for educational and research purposes only.
+
 # Installation
 
 ```sh
