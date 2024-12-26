@@ -155,7 +155,7 @@ function resizeCanvas(): void {
 
 export const renderCanvas = (): void => {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-
+    if (!canvas) return;
     ctx = canvas.getContext('2d') as ExtendedCanvasRenderingContext2D;
     ctx.running = true;
     ctx.frame = 1;

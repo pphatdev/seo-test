@@ -8,6 +8,9 @@ export default {
     darkMode: "class",
     theme: {
         extend: {
+            screens: {
+                xs: "360px"
+            },
             colors: {
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",

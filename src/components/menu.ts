@@ -13,7 +13,7 @@ export const menu = [
     },
     {
         title: "Projects",
-        url: "https://leatsophat.me/projects",
+        url: "/projects",
         isActive: currentPath === "/projects"
     },
     {
