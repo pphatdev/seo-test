@@ -29,10 +29,7 @@ export default {
         rollupOptions: {
             external: ["sharp"],
             output: {
-                manualChunks: {
-                    // vendor: ['react', 'react-dom'],
-                    // Add more chunk definitions as needed
-                }
+                manualChunks: {}
             }
         },
         chunkSizeWarningLimit: 1000, // Size in kB
