@@ -4,7 +4,7 @@ const search = (() => {
     return (
         `<div class="mx-auto flex items-center mt-5 gap-2 w-full justify-center max-w-3xl">
             <div class="flex relative gap-1">
-                <input class="pl-9 peer w-full px-5 text-sm py-1.5 border bg-background/10 border-foreground/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent" type="text" placeholder="Search projects...">
+                <input id="project-search" class="pl-9 peer w-full px-5 text-sm py-1.5 border bg-background/10 border-foreground/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent" type="text" placeholder="Search projects...">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 absolute left-2.5 top-1/2 transform -translate-y-1/2 text-foreground peer-focus:text-primary">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
