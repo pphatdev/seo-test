@@ -31,7 +31,7 @@ export const projects = (async () => {
     const githubProjects = await fetchGitHubProjects("pphatdev", currentPage);
 
     const renderProjects = (projects: GitHubRepo[]) => `
-        <div class="space-y-5">
+        <div class="space-y-5 mt-5">
             <ul id="projects-list" class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
                 ${projects.map(project => `
                     <li class="bg-foreground/5 rounded-lg p-5 relative min-h-40">
