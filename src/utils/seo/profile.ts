@@ -1,4 +1,5 @@
 import { minify } from "../minify"
+import { sameAs } from "./domain.config"
 
 const domain = window.location.origin ?? ""
 const identifier = import.meta.env.VITE_APP_ID ?? ""
@@ -37,9 +38,9 @@ export const ProfilePage = () => minify(
             },
             "description": "${description}",
             "image": "${domain}/${profilePath}",
-            "sameAs": [
-                "${domain}"
-            ]
+            "sameAs": ${JSON.stringify(sameAs)}
         }
     } </script>`
 )
+
+console.log(ProfilePage());
