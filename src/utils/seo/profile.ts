@@ -7,7 +7,8 @@ const description = import.meta.env.VITE_APP_DESCRIPTION ?? ""
 const profilePath = import.meta.env.VITE_APP_PROFILE_PATH ?? ""
 
 export const ProfilePage = () => minify(
-    `<script type="application/ld+json">{
+    `<script type="application/ld+json">
+    {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
         "dateCreated": "2024-12-23T12:34:00-05:00",
@@ -22,7 +23,8 @@ export const ProfilePage = () => minify(
                     "@type": "InteractionCounter",
                     "interactionType": "https://schema.org/FollowAction",
                     "userInteractionCount": 1
-                },{
+                },
+                {
                     "@type": "InteractionCounter",
                     "interactionType": "https://schema.org/LikeAction",
                     "userInteractionCount": 5
@@ -36,8 +38,8 @@ export const ProfilePage = () => minify(
             "description": "${description}",
             "image": "${domain}/${profilePath}",
             "sameAs": [
-                "${domain}",
+                "${domain}"
             ]
         }
     } </script>`
-) 
+)
