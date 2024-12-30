@@ -13,7 +13,7 @@ export const GlobalEvents: Event[] = [
         name: "Christmas",
         condition: () => {
             const today = new Date();
-            return today.getMonth() === 11 && today.getDate() >= 20 && today.getDate() <= 31;
+            return today.getMonth() === 11 && today.getDate() >= 20 && today.getDate() <= 25;
         },
         svgContent: (className) => `<svg class="${cn("w-10 h-10", className)}" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g clip-path="url(#clip0_23_5)">
