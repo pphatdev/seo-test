@@ -31,17 +31,17 @@ export const projects = (async () => {
     const githubProjects = await fetchGitHubProjects("pphatdev", currentPage);
 
     const renderProjects = (projects: GitHubRepo[]) => `
-        <div class="space-y-5 mt-5">
-            <ul id="projects-list" class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
+        <section class="space-y-5 mt-5">
+            <div id="projects-list" class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
                 ${projects.map(project => `
-                    <li class="bg-foreground/5 rounded-lg p-5 relative min-h-40">
-                        <h3 class="text-foreground font-bold text-xl">${project.name}</h3>
+                    <article class="bg-foreground/5 rounded-lg p-5 relative min-h-40">
+                        <h1 class="text-foreground font-bold text-xl">${project.name}</h3>
                         <p class="text-foreground/80 line-clamp-5 leading-7">${project.description || 'No description available'}</p>
                         <a href="${project.html_url}" class="absolute inset-0" target="_blank"><span class="sr-only">View on GitHub</span></a>
-                    </li>
+                    </article>
                 `).join('')}
-            </ul>
-        </div>
+            </div>
+        </section>
     `;
 
     setTimeout(() => {
