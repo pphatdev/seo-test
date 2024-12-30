@@ -1,4 +1,4 @@
-const host = window.location.hostname ?? ""
+const host = import.meta.env.VITE_APP_HOST ?? ""
 const subDomains = [
     "www",
     "v3"
