@@ -1,4 +1,4 @@
-const host = import.meta.env.VITE_APP_HOST ?? ""
+const host = import.meta.env.VITE_APP_HOST ?? "leatsophat.me"
 const subDomains = [
     "www",
     "v3"
