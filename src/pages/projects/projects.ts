@@ -13,7 +13,13 @@ async function fetchGitHubProjects(username: string, page: number = 1, perPage: 
             url = `https://api.github.com/users/${username}/repos?sort=updated&page=${page}&per_page=${perPage}`;
         }
 
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                Accept: 'application/vnd.github+json',
+                Authorization: `Bearer ${import.meta.env.VITE_GH_TOKEN ?? ""}`,
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        });
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
 
@@ -24,6 +30,17 @@ async function fetchGitHubProjects(username: string, page: number = 1, perPage: 
     }
 }
 
+const list = (projects: GitHubRepo[]) => projects.map(
+    project => (`
+        <article class="bg-foreground/5 rounded-lg p-5 relative min-h-32 sm:min-h-40">
+            <h3 class="text-foreground font-medium sm:font-bold line-clamp-2 sm:text-xl">${project.name}</h3>
+            <p class="text-foreground/80 line-clamp-3 sm:line-clamp-5 text-sm sm:text-base leading-5 sm:leading-7">${project.description || 'No description available'}</p>
+            <a href="${project.html_url}" class="absolute inset-0" target="_blank"><span class="sr-only">View on GitHub</span></a>
+        </article>`
+    )
+).join('')
+
+
 export const projects = (async () => {
     let currentPage = 1;
     let loading = false;
@@ -31,17 +48,11 @@ export const projects = (async () => {
     const githubProjects = await fetchGitHubProjects("pphatdev", currentPage);
 
     const renderProjects = (projects: GitHubRepo[]) => `
-        <div class="space-y-5 mt-5">
+        <section class="space-y-5 mt-5">
             <ul id="projects-list" class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
-                ${projects.map(project => `
-                    <li class="bg-foreground/5 rounded-lg p-5 relative min-h-40">
-                        <h3 class="text-foreground font-bold text-xl">${project.name}</h3>
-                        <p class="text-foreground/80 line-clamp-5 leading-7">${project.description || 'No description available'}</p>
-                        <a href="${project.html_url}" class="absolute inset-0" target="_blank"><span class="sr-only">View on GitHub</span></a>
-                    </li>
-                `).join('')}
+                ${list(projects)}
             </ul>
-        </div>
+        </section>
     `;
 
     setTimeout(() => {
@@ -66,13 +77,7 @@ export const projects = (async () => {
                         // Fetch searched projects
                         const searchedProjects = await fetchGitHubProjects("pphatdev", currentPage, 16, searchTerm);
 
-                        projectsList.innerHTML = searchedProjects.map(project => `
-                            <li class="bg-foreground/5 rounded-lg p-5 relative min-h-40">
-                                <h3 class="text-foreground font-bold text-xl">${project.name}</h3>
-                                <p class="text-foreground/80 line-clamp-5 leading-7">${project.description || 'No description available'}</p>
-                                <a href="${project.html_url}" class="absolute inset-0" target="_blank"><span class="sr-only">View on GitHub</span></a>
-                            </li>
-                        `).join('');
+                        projectsList.innerHTML = list(searchedProjects);
                     }
                 }, 300);
             });
@@ -92,13 +97,7 @@ export const projects = (async () => {
                 if (newProjects.length > 0) {
                     const projectsList = document.getElementById('projects-list');
                     if (projectsList) {
-                        projectsList.innerHTML += newProjects.map(project => `
-                            <li class="bg-foreground/5 rounded-lg p-5 relative min-h-40">
-                                <h3 class="text-foreground font-bold text-xl">${project.name}</h3>
-                                <p class="text-foreground/80 line-clamp-5 leading-7">${project.description || 'No description available'}</p>
-                                <a href="${project.html_url}" class="absolute inset-0" target="_blank"><span class="sr-only">View on GitHub</span></a>
-                            </li>
-                        `).join('');
+                        projectsList.innerHTML += list(newProjects);
                     }
                 }
                 loading = false;
