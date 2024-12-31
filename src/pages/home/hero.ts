@@ -33,8 +33,8 @@ const buttonList = [
     {
         id: 2,
         name: 'Projects',
-        target: "_blank",
-        href: "https://leatsophat.me/projects",
+        target: "",
+        href: "/projects",
         icon: projects,
         hasEffects: true
     },
@@ -65,7 +65,7 @@ const profile = (() => {
     const profile = profileMode()
 
     return (
-        `<div class="shrink-0 relative -mt-10">
+        `<div class="shrink-0 relative -mt-10 pointer-events-none">
             ${ profile }
             <div class="absolute bottom-0 z-50 items-end h-full bg-red-500 overflow-hidden rounded-full  translate-y-7 sm:translate-y-8 group-hover:flex">
                 <div class="flex -mb-px h-[1px] w-full">
