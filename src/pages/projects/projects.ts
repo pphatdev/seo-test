@@ -49,9 +49,9 @@ export const projects = (async () => {
 
     const renderProjects = (projects: GitHubRepo[]) => `
         <section class="space-y-5 mt-5">
-            <ul id="projects-list" class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
+            <div id="projects-list" class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
                 ${list(projects)}
-            </ul>
+            </div>
         </section>
     `;
 

@@ -28,8 +28,11 @@ export const heroSection = (() => {
     return (
         `<section class="max-w-6xl sm:min-h-[35rem] mt-16 md:mt-15 flex-col flex justify-center md:flex-row items-center mx-auto w-full px-5">
             <div class="grid grid-cols-1 gap-5">
-                <h1 class="text-3xl sm:text-5xl lg:text-7xl sm:text-center max-w-4xl text-foreground font-bold -translate-x-1">Discover the various projects and works by <span class="text-primary uppercase font-black"> ${import.meta.env.VITE_APP_NAME ?? ""}</span></h1>
-                <p class="text-foreground sm:text-lg text-xl sm:text-center">${ description }</p>
+                <h1 class="text-5xl lg:text-7xl text-center max-w-4xl text-foreground font-bold -translate-x-1">
+                    Discover the various projects and works by
+                    <span class="text-primary uppercase font-black"> ${import.meta.env.VITE_APP_NAME ?? ""}</span>
+                </h1>
+                <p class="text-foreground sm:text-lg text-xl text-center">${ description }</p>
                 ${ search }
             </div>
         </section>`
