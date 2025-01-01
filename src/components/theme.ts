@@ -17,7 +17,7 @@ export const moon = (className?: string) => {
 }
 
 export const themeSwitcher = () => {
-    const theme = localStorage.getItem('theme') || 'light'
+    const theme = localStorage.getItem('theme') || 'dark' // Set default to 'dark'
     const htmlElement = document.documentElement
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
