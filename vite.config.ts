@@ -4,9 +4,10 @@ import { dirname } from 'path';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import sitemapPlugin from 'vite-plugin-sitemap';
 import { menu } from './src/components/menu';
+import { ImageSitemap } from './src/utils/seo/sitemap/image';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const dynamicRoutes = menu.map(name =>  {
+const dynamicRoutes = menu.map(name => {
     if (!name.url.includes('http')) {
         return name.url;
     }
@@ -36,11 +37,15 @@ export default {
     },
     plugins: [
         ViteImageOptimizer({
-          /* pass your config */
+            /* pass your config */
         }),
         sitemapPlugin({
             hostname: 'https://v3.leatsophat.me',
             dynamicRoutes
         }),
+        ImageSitemap({
+            content: './public/**/*.{jpg,jpeg,png,gif,webp}',
+            outputPath: './public/sitemap-images.xml',
+        })
     ],
 }
