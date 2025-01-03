@@ -24,5 +24,3 @@ dist-ssr
 *.sw?
 
 public/sitemap-images.xml
-
-package-lock.json
