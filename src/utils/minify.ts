@@ -1,1 +1,0 @@
-export const minify = (str: string = "") => str.replace(/\s\s+|\n|\t+/g, '');

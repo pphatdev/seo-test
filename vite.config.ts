@@ -2,16 +2,15 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-import sitemapPlugin from 'vite-plugin-sitemap';
-import { menu } from './src/components/menu';
-import { ImageSitemap } from './src/utils/seo/sitemap/image';
+// import sitemapPlugin from 'vite-plugin-sitemap';
+import mpa from './src/routes/vite';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const dynamicRoutes = menu.map(name => {
-    if (!name.url.includes('http')) {
-        return name.url;
-    }
-}).filter((route): route is string => route !== undefined);
+// const dynamicRoutes = menu.map(name => {
+//     if (!name.url.includes('http')) {
+//         return name.url;
+//     }
+// }).filter((route): route is string => route !== undefined);
 
 export default {
     resolve: {
@@ -39,13 +38,14 @@ export default {
         ViteImageOptimizer({
             /* pass your config */
         }),
-        sitemapPlugin({
-            hostname: 'https://v3.leatsophat.me',
-            dynamicRoutes
+        // sitemapPlugin({
+        //     hostname: 'https://v3.leatsophat.me',
+        //     dynamicRoutes
+        // }),
+        mpa({
+            scanDir: 'src/pages',
+            defaultOpenPage: 'home',
+            ignorePageNames: '',
         }),
-        ImageSitemap({
-            content: './public/**/*.{jpg,jpeg,png,gif,webp}',
-            outputPath: './public/sitemap-images.xml',
-        })
     ],
 }
