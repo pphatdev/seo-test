@@ -10,9 +10,9 @@ def replace_assets(file_path):
         file.write(content)
 
 if __name__ == "__main__":
-    file_path = 'index.html'  # Update this path if needed
-    if os.path.exists(file_path):
-        replace_assets(file_path)
-        print(f'Replaced "/assets" with "./assets" in {file_path}')
+    dist_path = 'dist/index.html'  # Update this path if needed
+    if os.path.exists(dist_path):
+        replace_assets(dist_path)
+        print(f'Replaced "/assets" with "./assets" in {dist_path}')
     else:
-        print(f'File {file_path} does not exist')
+        print(f'File {dist_path} does not exist')
