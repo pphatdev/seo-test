@@ -43,9 +43,9 @@ export default {
             hostname: 'https://v3.leatsophat.me',
             dynamicRoutes
         }),
-        ImageSitemap({
-            content: './public/**/*.{jpg,jpeg,png,gif,webp}',
-            outputPath: './public/sitemap-images.xml',
-        })
+        // ImageSitemap({
+        //     content: './public/**/*.{jpg,jpeg,png,gif,webp}',
+        //     outputPath: './public/sitemap-images.xml',
+        // })
     ],
 }

@@ -18,8 +18,9 @@ export default {
                 'primary-foreground': "hsl(var(--primary-foreground))",
             },
             fontFamily: {
-                default: "Kantumruy Pro, Poppins, sans-serif"
-            }
+                default: "Kantumruy Pro, Poppins, sans-serif",
+                head: "Kdam Thmor Pro, Kanit, serif"
+            },
         },
     },
     plugins: [],
