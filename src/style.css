@@ -9,6 +9,8 @@
 
         --primary: 162 98% 40%;
         --primary-foreground: 222.2 84% 4.9%;
+
+        @apply font-default text-foreground/80;
     }
 
     .dark {
@@ -16,7 +18,8 @@
         --foreground: 210 40% 98%;
     }
 
-    * {
-        @apply font-default text-foreground/80;
+
+    h1 {
+        @apply font-head font-black;
     }
 }
