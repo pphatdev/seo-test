@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf package-lock.json && npm install && tsc && vite build",
+    "pre:build": "rm -rf node_modules package-lock.json && npm install",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "repository": {
