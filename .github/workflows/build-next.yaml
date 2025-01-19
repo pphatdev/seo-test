@@ -25,7 +25,7 @@ jobs:
         rm -f package-lock.json
 
     - name: Install dependencies
-      run: npm install && npm ci
+      run: npm install && npm ci && npx next telemetry disable
 
     - name: Build Next.js app
       run: npm run build
