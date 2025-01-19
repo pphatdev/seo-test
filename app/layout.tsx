@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Kantumruy_Pro } from "next/font/google";
 import "./globals.css";
-import Providers from "../components/ProgressBarProvider";
+import Providers from "@components/ProgressBarProvider";
 import { FloatingNav } from "@components/ui/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
