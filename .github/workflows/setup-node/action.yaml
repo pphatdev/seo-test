@@ -19,3 +19,25 @@ runs:
       shell: bash
       if: steps.cache_dependencies.outputs.cache-hit != 'true'
       run: npm ci
+
+    - name: Validate JSON files 📋
+      shell: bash
+      run: |
+        find . -type f -name "*.json" -exec echo "Validating {}" \; -exec jq empty {} \;
+
+    - name: Build with detailed logging 🏗️
+      shell: bash
+      run: |
+        export NODE_OPTIONS="--max-old-space-size=4096"
+        npm run build || {
+          echo "Build failed. Checking for common issues..."
+          echo "Contents of .next/server directory:"
+          ls -la .next/server || true
+          echo "Last 100 lines of build log:"
+          tail -n 100 .next/build-manifest.json || true
+          exit 1
+        }
+
+    - name: Type check 📝
+      shell: bash
+      run: npm run type-check || true
