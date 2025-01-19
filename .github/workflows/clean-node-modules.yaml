@@ -1,0 +1,27 @@
+name: Clean Node Modules
+
+on:
+  push:
+    branches:
+      - v2
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Remove node_modules and package-lock.json
+      run: |
+        rm -rf node_modules
+        rm -f package-lock.json
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -A
+        git commit -m '🫡: Cleaned node_modules and package-lock.json'
+        git push
