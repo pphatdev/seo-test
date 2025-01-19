@@ -16,16 +16,3 @@ jobs:
       run: |
         rm -rf node_modules
         rm -f package-lock.json
-
-    - name: Commit changes
-      run: |
-        git config --global user.name 'pphatdev'
-        git config --global user.email 'leatsophat02@gmail.com'
-        git add -A
-        git commit -m '🫡: Cleaned node_modules and package-lock.json'
-
-    - name: Push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        git push
