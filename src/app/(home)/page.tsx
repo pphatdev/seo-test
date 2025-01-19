@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./(home)/sections/hero";
+import Hero from "./sections/hero";
 
 export default function Home() {
     return (
