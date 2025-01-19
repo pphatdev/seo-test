@@ -8,6 +8,9 @@ runs:
       with:
         node-version: 20
 
+    - name: Romve node_modules 🧹
+      run: rm -rf node_modules && rm -f package-lock.json
+
     - name: Cache dependencies ⚡
       id: cache_dependencies
       uses: actions/cache@v3
