@@ -7,12 +7,15 @@ import { GridPattern } from "@components/ui/grid-pattern";
 import { Button } from "@components/ui/moving-border";
 import { TextAnimate } from "@components/text-animation";
 
+const name = "Leat Sophat"
+const positions = ["Senior Front-end Developer.", "UI/UX Designer."]
+const descriptions = "I worked at TurboTech with extensive experience in building modern web applications. Specializing in React, Next.js, and UI/UX design, Check out my portfolio to see my latest projects and design innovations."
+
 export default function Hero() {
-    const words = JSON.parse(process.env.APP_POSITION ?? "");
     return (
         <main className="w-full mx-auto relative">
-            <h1 className="sr-only">{process.env.APP_NAME ?? ""}</h1>
-            <p className="sr-only">{process.env.APP_DESCRIPTION ?? ""}</p>
+            <h1 className="sr-only">{name}</h1>
+            <p className="sr-only">{descriptions ?? ""}</p>
             <BackgroundBeamsWithCollision className="flex items-center justify-center w-full h-screen md:h-screen">
                 <GridPattern
                     width={30}
@@ -33,13 +36,13 @@ export default function Hero() {
                                     <span className="mr-2">Hello I'm</span>
                                 </div>
                             </div>
-                            <Cover>{process.env.APP_NAME ?? ""}</Cover>
+                            <Cover>{name}</Cover>
                         </div>
                         <div className="text-2xl text-center md:text-left font-semibold">
-                            <FlipWords words={words} />
+                            <FlipWords words={positions} />
                         </div>
                         <TextAnimate animation="slideLeft" by="word" className="whitespace-pre-wrap mt-5">
-                            {process.env.APP_DESCRIPTION ?? ""}
+                            {descriptions ?? ""}
                         </TextAnimate>
                         <nav className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-6">
                             <Button
@@ -53,7 +56,15 @@ export default function Hero() {
                             <a href="#portfolio" className="px-4 py-2 hover:underline">View Portfolio</a>
                         </nav>
                     </div>
-                    <Image src="/assets/avatars/hero.webp" width={512} height={512} alt="LEAT Sophat - Senior Front-end Developer" className="order-last w-44 sm:w-80 h-44 sm:h-80 object-cover" />
+                    <Image
+                        src="/assets/avatars/hero.webp"
+                        width={512}
+                        height={512}
+                        alt="LEAT Sophat - Senior Front-end Developer"
+                        className="order-last w-44 sm:w-80 h-44 sm:h-80 object-cover"
+                        priority
+                        loading="eager"
+                    />
                 </section>
             </BackgroundBeamsWithCollision>
         </main>
