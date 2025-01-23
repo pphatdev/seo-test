@@ -7,6 +7,7 @@ import { GridPattern } from "@components/ui/grid-pattern";
 import { Button } from "@components/ui/moving-border";
 import { TextAnimate } from "@components/text-animation";
 import { appDescriptions, appName, appPositions } from "@lib/data";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 
 export default function Hero() {
@@ -43,15 +44,25 @@ export default function Hero() {
                             {appDescriptions ?? ""}
                         </TextAnimate>
                         <nav className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-6">
-                            <Button
+                            {/* <Button
                                 as={"a"}
                                 href="#contact"
                                 borderRadius="1.75rem"
-                                className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+                                containerClassName="w-fit"
+                                className="bg-white inline-flex dark:bg-slate-900 px-5 text-black dark:text-white border-neutral-200 dark:border-slate-800"
                             >
-                                Contact Me
+                                CV
+                            </Button> */}
+                            <Button
+                                as={"a"}
+                                href="https://github.com/pphatdev"
+                                borderRadius="1.75rem"
+                                containerClassName="w-fit p-[2px]"
+                                className="from-foreground bg-gradient-to-tr inline-flex w-fit px-4 gap-1 border-border dark:border-slate-800"
+                            >
+                                <IconBrandGithub/>
+                                Github
                             </Button>
-                            <a href="#portfolio" className="px-4 py-2 hover:underline">View Portfolio</a>
                         </nav>
                     </div>
                     <Image
