@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "../components/ProgressBarProvider";
 import { FloatingNav } from "@components/ui/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { ThemeProvider } from 'next-themes'
 
 const poppins = Poppins({
     variable: "--font-poppins",
@@ -47,12 +48,14 @@ export default function RootLayout({
         },
     ];
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={`${poppins.variable} ${kantumruyPro.variable} antialiased p-0 m-0`}>
-                <FloatingNav navItems={navItems} />
-                <Providers>
-                    {children}
-                </Providers>
+                <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+                    <Providers>
+                        <FloatingNav navItems={navItems} />
+                        {children}
+                    </Providers>
+                </ThemeProvider>
             </body>
         </html>
     );
