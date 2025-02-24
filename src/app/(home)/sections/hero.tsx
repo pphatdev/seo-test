@@ -4,10 +4,10 @@ import { BackgroundBeamsWithCollision } from "@components/ui/background-beams-wi
 import { Cover } from "@components/ui/cover";
 import { FlipWords } from "@components/flip-words";
 import { GridPattern } from "@components/ui/grid-pattern";
-import { Button } from "@components/ui/moving-border";
 import { TextAnimate } from "@components/text-animation";
 import { appDescriptions, appName, appPositions } from "@lib/data";
-import { IconBrandGithub } from "@tabler/icons-react";
+import { ThemeToggle } from "@components/ui/theme-switch";
+import { MagneticButton } from "@components/ui/magnetic-button";
 
 
 export default function Hero() {
@@ -53,16 +53,31 @@ export default function Hero() {
                             >
                                 CV
                             </Button> */}
-                            <Button
+                            {/* <Button
                                 as={"a"}
                                 href="https://github.com/pphatdev"
                                 borderRadius="1.75rem"
                                 containerClassName="w-fit p-[2px]"
-                                className="from-foreground bg-gradient-to-tr inline-flex w-fit px-4 gap-1 border-border dark:border-slate-800"
+                                className="from-foreground via-primary/50 bg-gradient-to-tr inline-flex w-fit text-background px-4 gap-1 border-border"
                             >
                                 <IconBrandGithub/>
                                 Github
-                            </Button>
+                            </Button> */}
+
+                            <MagneticButton>
+                                {/* <Button
+                                    as={"a"}
+                                    href="https://github.com/pphatdev"
+                                    borderRadius="1.75rem"
+                                    containerClassName="w-fit p-[2px]"
+                                    className="from-foreground via-primary/50 bg-gradient-to-tr inline-flex w-fit text-background px-4 py-2 gap-1 border-border"
+                                >
+                                    <IconBrandGithub/>
+                                    Github
+                                </Button> */}
+                                <ThemeToggle/>
+                            </MagneticButton>
+
                         </nav>
                     </div>
                     <Image
@@ -70,7 +85,7 @@ export default function Hero() {
                         width={512}
                         height={512}
                         alt="LEAT Sophat - Senior Front-end Developer"
-                        className="order-last w-44 sm:w-80 h-44 sm:h-80 object-cover"
+                        className="order-last w-44 sm:w-80 h-44 sm:h-80 object-cover select-none"
                         priority
                         loading="eager"
                     />
