@@ -5,12 +5,12 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const SPRING_CONFIG = { damping: 100, stiffness: 400 };
 
-type MagneticButtonType = {
+type MagneticAreaType = {
     children: React.ReactNode;
     distance?: number;
 };
 
-function MagneticButton({ children, distance = 0.6 }: MagneticButtonType) {
+function MagneticArea({ children, distance = 0.6 }: MagneticAreaType) {
     const [isHovered, setIsHovered] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -60,4 +60,4 @@ function MagneticButton({ children, distance = 0.6 }: MagneticButtonType) {
     );
 }
 
-export { MagneticButton };
+export { MagneticArea };
