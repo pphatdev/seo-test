@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "generate": "tsc src/scripts/generate-manifest.ts --outDir build && node build/scripts/generate-manifest.js",
+    "build": "npm run generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
