@@ -20,6 +20,7 @@ const kantumruyPro = Kantumruy_Pro({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://pphat.netlify.app'),
     title: appName,
     description: appDescriptions,
     keywords: ["leatsophat.me", "leat sophat", "sophat", "pphatdev", "pphat", "phat", "sophat", "leat", "sophat leat", "sophat dev"],
@@ -39,6 +40,20 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true
+    },
+    openGraph: {
+        images: [
+            {
+                url: '/assets/screenshots/origin-dark.png',
+                width: 1900,
+                height: 926,
+                alt: appName
+            }
+        ]
+    },
+    twitter: {
+        card: 'summary_large_image',
+        images: ['/assets/screenshots/origin-dark.png']
     }
 };
 
