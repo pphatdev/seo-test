@@ -4,10 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 
 export const BackgroundBeamsWithCollision = ({
-    children,
     className,
 }: {
-    children: React.ReactNode;
     className?: string;
 }) => {
     const containerRef = useRef<HTMLDivElement>(null!);
@@ -70,7 +68,7 @@ export const BackgroundBeamsWithCollision = ({
         <div
             ref={parentRef}
             className={cn(
-                "h-96 md:h-[40rem] bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center w-full justify-center overflow-hidden",
+                "h-screen -z-10 relative flex items-center w-full justify-center overflow-hidden",
                 // h-screen if you want bigger
                 className
             )}
@@ -84,7 +82,6 @@ export const BackgroundBeamsWithCollision = ({
                 />
             ))}
 
-            {children}
             <div
                 ref={containerRef}
                 className="absolute bottom-0 bg-neutral-100 w-full inset-x-0 pointer-events-none"
@@ -234,13 +231,13 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
 
     return (
         <div {...props} className={cn("absolute z-50 h-2 w-2", props.className)}>
-            <motion.div
+            {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
-            ></motion.div>
+            ></motion.div> */}
             {spans.map((span) => (
                 <motion.span
                     key={span.id}
