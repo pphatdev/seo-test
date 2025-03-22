@@ -8,6 +8,7 @@ import { Button } from "@components/ui/moving-border";
 import { TextAnimate } from "@components/text-animation";
 import { appDescriptions, appName, appPositions } from "@lib/data";
 import { IconBrandGithub } from "@tabler/icons-react";
+import { DockMenu } from "@components/dock-menu";
 
 
 export default function Hero() {
@@ -53,7 +54,7 @@ export default function Hero() {
                             >
                                 CV
                             </Button> */}
-                            <Button
+                            {/* <Button
                                 as={"a"}
                                 href="https://github.com/pphatdev"
                                 borderRadius="1.75rem"
@@ -62,8 +63,10 @@ export default function Hero() {
                             >
                                 <IconBrandGithub/>
                                 Github
-                            </Button>
+                            </Button> */}
+
                         </nav>
+                        <DockMenu/>
                     </div>
                     <Image
                         src="/assets/avatars/hero.webp"
