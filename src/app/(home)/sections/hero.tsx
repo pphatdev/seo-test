@@ -4,19 +4,19 @@ import { BackgroundBeamsWithCollision } from "@components/ui/background-beams-wi
 import { Cover } from "@components/ui/cover";
 import { FlipWords } from "@components/flip-words";
 import { GridPattern } from "@components/ui/grid-pattern";
-import { Button } from "@components/ui/moving-border";
 import { TextAnimate } from "@components/text-animation";
 import { appDescriptions, appName, appPositions } from "@lib/data";
-import { IconBrandGithub } from "@tabler/icons-react";
-import { DockMenu } from "@components/dock-menu";
+import { NavMenu } from "@components/dock-menu";
+import { ThemeToggle } from "@components/ui/theme-switch";
+import { MagneticArea } from "@components/ui/magnetic-button";
 
 
 export default function Hero() {
     return (
-        <main className="w-full mx-auto relative">
+        <main className="w-full mx-auto min-h-full h-full relative">
             <h1 className="sr-only">{appName}</h1>
             <p className="sr-only">{appDescriptions ?? ""}</p>
-            <BackgroundBeamsWithCollision className="flex items-center justify-center w-full h-screen md:h-screen">
+            <BackgroundBeamsWithCollision className="flex items-center pointer-events-none justify-center w-full h-screen md:h-screen"/>
                 <GridPattern
                     width={30}
                     height={30}
@@ -38,47 +38,33 @@ export default function Hero() {
                             </div>
                             <Cover>{appName}</Cover>
                         </div>
-                        <div className="text-2xl text-center md:text-left font-semibold">
+                        <div className="text-2xl text-center h-fit md:text-left font-semibold">
                             <FlipWords words={appPositions} />
                         </div>
-                        <TextAnimate animation="slideLeft" by="word" className="whitespace-pre-wrap mt-5">
+                        <TextAnimate animation="slideLeft" by="word" className="whitespace-pre-wrap min-h-96 mt-5">
                             {appDescriptions ?? ""}
                         </TextAnimate>
-                        <nav className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-6">
-                            {/* <Button
-                                as={"a"}
-                                href="#contact"
-                                borderRadius="1.75rem"
-                                containerClassName="w-fit"
-                                className="bg-white inline-flex dark:bg-slate-900 px-5 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-                            >
-                                CV
-                            </Button> */}
-                            {/* <Button
-                                as={"a"}
-                                href="https://github.com/pphatdev"
-                                borderRadius="1.75rem"
-                                containerClassName="w-fit p-[2px]"
-                                className="from-foreground bg-gradient-to-tr inline-flex w-fit px-4 gap-1 border-border dark:border-slate-800"
-                            >
-                                <IconBrandGithub/>
-                                Github
-                            </Button> */}
-
+                        <nav className="flex flex-col justify-center sm:flex-row items-center gap-4 mt-6">
+                            <MagneticArea>
+                                <ThemeToggle/>
+                            </MagneticArea>
                         </nav>
-                        <DockMenu/>
+                        <NavMenu/>
                     </div>
-                    <Image
-                        src="/assets/avatars/hero.webp"
-                        width={512}
-                        height={512}
-                        alt="LEAT Sophat - Senior Front-end Developer"
-                        className="order-last w-44 sm:w-80 h-44 sm:h-80 object-cover"
-                        priority
-                        loading="eager"
-                    />
+                    <div className="order-first md:order-last">
+                        <MagneticArea >
+                            <Image
+                                src="/assets/avatars/hero.webp"
+                                width={512}
+                                height={512}
+                                alt="LEAT Sophat - Senior Front-end Developer"
+                                className="w-44 sm:w-80 h-44 sm:h-80 object-cover select-none"
+                                priority
+                                loading="eager"
+                            />
+                        </MagneticArea>
+                    </div>
                 </section>
-            </BackgroundBeamsWithCollision>
         </main>
     );
 }
