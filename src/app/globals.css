@@ -30,10 +30,16 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    
+
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+    --speed: 2s;
   }
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 11%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -126,5 +132,38 @@
   }
   body {
     @apply bg-background text-foreground font-default;
+  }
+
+  .color-1 { color: hsl(var(--color-1)); }
+  .color-2 { color: hsl(var(--color-2)); }
+  .color-3 { color: hsl(var(--color-3)); }
+  .color-4 { color: hsl(var(--color-4)); }
+  .color-5 { color: hsl(var(--color-5)); }
+
+  .bg-color-1 { background-color: hsl(var(--color-1)); }
+  .bg-color-2 { background-color: hsl(var(--color-2)); }
+  .bg-color-3 { background-color: hsl(var(--color-3)); }
+  .bg-color-4 { background-color: hsl(var(--color-4)); }
+  .bg-color-5 { background-color: hsl(var(--color-5)); }
+  @keyframes rainbow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-rainbow {
+    animation: rainbow var(--speed, 2s) infinite linear;
   }
 }
