@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./sections/hero";
+import HeroSection from "./sections/hero";
 import { Metadata } from "next";
 import { appDescriptions, appName } from "@lib/data";
 
@@ -23,10 +23,19 @@ export const metadata: Metadata = {
     }
 };
 
+const DEMO_FAQS = [
+    {
+        question: "2018-2019",
+        answer: "Gender",
+    },
+];
+
+
 export default function Home() {
+
     return (
         <div className="w-full mx-auto min-h-screen overflow-y-auto">
-            <Hero />
+            <HeroSection />
         </div>
     );
 }
