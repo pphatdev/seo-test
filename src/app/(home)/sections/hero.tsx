@@ -10,11 +10,15 @@ import { NavMenu } from "@components/dock-menu";
 import { ThemeToggle } from "@components/ui/theme-switch";
 import { MagneticArea } from "@components/ui/magnetic-button";
 import { cn } from "@lib/utils";
+import Link from "next/link";
+// import { Button } from '../../../components/ui/moving-border';
 
 
-export default function Hero() {
+
+export default function HeroSection() {
     return (
-        <main className="w-full mx-auto min-h-full h-full overflow-x-hidden relative">
+        <main className="w-full mx-auto min-h-full h-full overflow-x-hidden relative" id="hero">
+
             <h1 className="sr-only">{appName}</h1>
             <p className="sr-only">{appDescriptions ?? ""}</p>
             <BackgroundBeamsWithCollision className="flex items-center absolute -z-[1] pointer-events-none justify-center w-full h-screen" />
@@ -56,27 +60,30 @@ export default function Hero() {
                     <NavMenu />
                 </div>
                 <div className={cn("order-first relative mt-10 sm:mt-0 shrink-0 md:order-last")}>
-                    {/* <MagneticArea > */}
+                    <MagneticArea >
                         <div className={cn(
                             "absolute -z-[1] w-full h-full blur-3xl  left-1/2 -bottom-1/3 -translate-x-1/2 opacity-20 animate-rainbow",
                             "bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]",
                             "bg-[length:200%]",
                         )}></div>
-                        <Image
-                            src="/assets/avatars/hero.webp"
-                            width={512}
-                            height={512}
-                            alt="LEAT Sophat - Senior Front-end Developer and UI/UX Designer"
-                            className={cn(
-                                "w-36 rounded-full sm:rounded-md sm:w-80 h-36 sm:h-80 object-cover select-none"
-                            )}
-                            priority
-                            loading="eager"
-                        />
-                    {/* </MagneticArea> */}
+
+                        <Link href={'/gallery'}>
+                            <Image
+                                src="/assets/avatars/hero.webp"
+                                width={512}
+                                height={512}
+                                alt="LEAT Sophat - Senior Front-end Developer and UI/UX Designer"
+                                className={cn(
+                                    "w-36 rounded-full sm:rounded-md sm:w-80 h-36 sm:h-80 object-cover select-none"
+                                )}
+                                priority
+                                loading="eager"
+                            />
+                        </Link>
+
+                    </MagneticArea>
                 </div>
             </section>
-
         </main >
     );
 }
