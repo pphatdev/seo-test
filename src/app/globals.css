@@ -166,4 +166,18 @@
   .animate-rainbow {
     animation: rainbow var(--speed, 2s) infinite linear;
   }
+
+  .container {
+    max-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1400px;
+    }
+  }
 }
