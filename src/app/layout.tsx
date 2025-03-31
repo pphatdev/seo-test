@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins, Kantumruy_Pro } from "next/font/google";
 import Providers from "../components/ProgressBarProvider";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+// import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { ThemeProvider } from 'next-themes'
 import { appDescriptions, appName } from "@lib/data";
 // import { FloatingNav } from "@components/ui/floating-navbar";
