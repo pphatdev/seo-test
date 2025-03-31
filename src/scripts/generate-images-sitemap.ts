@@ -4,7 +4,7 @@ import { join } from "path";
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://new-pphat.netlify.app';
 
 // Function to generate image sitemap
-async function generateImageSitemap() {
+export async function generateImageSitemap() {
     try {
         // Path to your gallery images
         const imageDir = join(process.cwd(), 'public', 'assets', 'gallery', 'WEBP');
@@ -46,8 +46,8 @@ async function generateImageSitemap() {
 
         // Write to file with error handling
         const outputPath = join(process.cwd(), 'public', 'image-sitemap.xml');
-        writeFileSync(outputPath, sitemap, 'utf-8');
-        console.log('✅ Image sitemap generated successfully at:', outputPath);
+        writeFileSync(outputPath.replace(/\s+/g, ""), sitemap, 'utf-8');
+        console.log('✅ Image sitemap generated successfully.');
     } catch (error) {
         console.error('❌ Error generating sitemap:', error instanceof Error ? error.message : error);
         throw error;
