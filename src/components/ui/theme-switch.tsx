@@ -25,15 +25,28 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
 
     const isDark = resolvedTheme === "dark"
 
+    const toggleTheme = () => setTheme(isDark ? "light" : "dark")
+
+    const handleKeyDown = (event: React.KeyboardEvent) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault()
+            toggleTheme()
+        }
+    }
+
     return (
         <div
             className={cn(
                 "flex w-16 h-8 p-1 rounded-full cursor-pointer transition-all duration-300",
                 isDark ? "bg-zinc-950 border border-zinc-800" : "bg-white border border-zinc-200",
+                "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
                 className
             )}
-            onClick={() => setTheme(isDark ? "light" : "dark")}
-            role="button"
+            onClick={toggleTheme}
+            onKeyDown={handleKeyDown}
+            role="switch"
+            aria-checked={isDark}
+            aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
             tabIndex={0}
         >
             <div className="flex justify-between items-center w-full">
