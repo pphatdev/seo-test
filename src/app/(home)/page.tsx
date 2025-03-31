@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "./sections/hero";
 import { Metadata } from "next";
 import { appDescriptions, appName } from "@lib/data";
+import OrganizationStructuredData from "@components/organization-structured-data";
 
 export const metadata: Metadata = {
     title: appName,
@@ -36,6 +37,7 @@ export default function Home() {
     return (
         <div className="w-full mx-auto min-h-screen overflow-y-auto">
             <HeroSection />
+            <OrganizationStructuredData />
         </div>
     );
 }
