@@ -6,6 +6,8 @@ interface Image {
     alt: string
     width: number
     height: number
+    link?: string
+    caption?: string
 }
 
 const publicDir = path.join(process.cwd(), 'public');
@@ -17,5 +19,7 @@ export const images: Image[] = fs.readdirSync(imageDir)
         src: `/assets/gallery/WEBP/${file}`,
         alt: file.split('.')[0],
         width: 300,
-        height: 200
+        height: 200,
+        link: `/gallery/${file.split('.')[0]}`,
+        caption: file.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
     }));
