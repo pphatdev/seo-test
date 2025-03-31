@@ -1,3 +1,3 @@
 export const appName = "Leat Sophat"
 export const appPositions = ["Senior Front-end Developer.", "UI/UX Designer."]
-export const appDescriptions = "I worked at TurboTech with extensive experience in building modern web applications. Specializing in React, Next.js, and UI/UX design, Check out my portfolio to see my latest projects and design innovations."
+export const appDescriptions = "Welcome to my portfolio - Thoughts from a wandering mind. Currently I work as a Senior Front-end Developer at TurboTech, and as a Freelancer UI/UX designer. In my free time, I enjoy designing side projects and developing them."
