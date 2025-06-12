@@ -40,7 +40,7 @@ export default {
             /* pass your config */
         }),
         sitemapPlugin({
-            hostname: 'https://v3.leatsophat.me',
+            hostname: 'https://about.pphat.top',
             dynamicRoutes
         }),
         // ImageSitemap({
