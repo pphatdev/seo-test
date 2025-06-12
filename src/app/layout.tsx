@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://pphat.netlify.app'),
     title: appName,
     description: appDescriptions,
-    keywords: ["leatsophat.me", "leat sophat", "sophat", "pphatdev", "pphat", "phat", "sophat", "leat", "sophat leat", "sophat dev"],
+    keywords: ["leatsophat.me", "leat sophat", "sophat leat", "sophat", "pphatdev", "pphat", "phat", "sophat", "leat", "sophat leat", "sophat dev"],
     icons: [
         {
             url: "/favicon.ico",

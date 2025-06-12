@@ -72,7 +72,7 @@ export default function HeroSection() {
                                 src="/assets/avatars/hero.webp"
                                 width={512}
                                 height={512}
-                                alt="LEAT Sophat - Senior Front-end Developer and UI/UX Designer"
+                                alt="Sophat LEAT - Senior Front-end Developer and UI/UX Designer"
                                 className={cn(
                                     "w-36 rounded-full sm:rounded-md sm:w-80 h-36 sm:h-80 object-cover select-none"
                                 )}

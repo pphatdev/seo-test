@@ -25,20 +25,18 @@ export async function generateImageSitemap() {
             `    <loc>${baseUrl}/gallery</loc>`,
             imageFiles.map(file => {
                 const imageName = file.split('.')[0];
-                return [
-                    '    <image:image>',
+                return [                    '    <image:image>',
                     `      <image:loc>${baseUrl}/assets/gallery/WEBP/${file}</image:loc>`,
-                    `      <image:title>Leat Sophat - ${imageName}</image:title>`,
+                    `      <image:title>Sophat LEAT - ${imageName}</image:title>`,
                     '    </image:image>'
                 ].join('\n');
             }).join('\n'),
             '  </url>',
             '  <url>',
-            `    <loc>${baseUrl}</loc>`,
-            '    <image:image>',
+            `    <loc>${baseUrl}</loc>`,            '    <image:image>',
             `      <image:loc>${baseUrl}/assets/avatars/hero.webp</image:loc>`,
-            '      <image:title>Leat Sophat - Senior Front-end Developer and UI/UX Designer</image:title>',
-            '      <image:caption>Profile photo of Leat Sophat</image:caption>',
+            '      <image:title>Sophat LEAT - Senior Front-end Developer and UI/UX Designer</image:title>',
+            '      <image:caption>Profile photo of Sophat LEAT</image:caption>',
             '    </image:image>',
             '  </url>',
             '</urlset>'

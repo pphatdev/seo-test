@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: appDescriptions,
     authors: [{
         url: "https://new-pphat.netlify.app",
-        name: "Leat Sophat",
+        name: "Sophat LEAT",
     }],
     generator: "PPhat Dev",
     openGraph: {
