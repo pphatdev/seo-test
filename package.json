@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/pphatdev/seo-example#readme",
   "devDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.43.0",
     "@types/node": "^22.10.2",
     "@types/three": "^0.171.0",
     "autoprefixer": "^10.4.20",
