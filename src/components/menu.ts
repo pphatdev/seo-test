@@ -18,7 +18,7 @@ export const menu = [
     },
     {
         title: "About us",
-        url: "https://leatsophat.me/about/",
+        url: "https://about.pphat.top/about/",
         isActive: currentPath === "/about"
     },
 ]
